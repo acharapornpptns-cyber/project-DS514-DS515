@@ -56,7 +56,21 @@ best_knn = grid_search.best_estimator_
 y_predict_train2 = best_knn.predict(X_train_scaled2)
 y_predict_test2 = best_knn.predict(X_test_scaled2)
 
-</div>
+### Model Performance Evaluation
+Here is the classification report for the model:
+
+| Class | Precision | Recall | F1-Score | Support |
+| :--- | :---: | :---: | :---: | :---: |
+| **0** | 0.40 | 0.52 | 0.45 | 62 |
+| **1** | 0.85 | 0.83 | 0.84 | 84 |
+| **2** | 0.56 | 0.45 | 0.50 | 82 |
+| | | | | |
+| **Accuracy** | | | **0.61** | **228** |
+| **Macro Avg** | 0.60 | 0.60 | 0.60 | 228 |
+| **Weighted Avg**| 0.62 | 0.61 | 0.61 | 228 |
+
+> **Note:** The model performs best on **Class 1** (F1-score: 0.84) but struggles with **Class 0** (F1-score: 0.45).
+
 ## การประเมินผลโมเดล (Evaluation)
 * Accuracy
 * Precision
