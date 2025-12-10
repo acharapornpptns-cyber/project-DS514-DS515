@@ -73,5 +73,4 @@ y_predict_test2 = best_knn.predict(X_test_scaled2)
 | **Weighted Avg**| 0.62 | 0.61 | 0.61 | 228 |
 
 > **Note:** The model performs best on **Class 1** (F1-score: 0.84) but struggles with **Class 0** (F1-score: 0.45)
-<p align ="center"> ![Confusion Matrix](https://github.com/user-attachments/assets/1f3bc7c1-bd76-4339-91ea-4f6ab435548a)
-</p>
+<p align ="center"> <img width="50%" alt="Confusion-Matrix" src="https://github.com/user-attachments/assets/38de83d8-8044-4980-95a7-30b5aa6c0e14" /></p>
