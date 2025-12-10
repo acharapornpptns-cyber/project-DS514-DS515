@@ -30,7 +30,6 @@ Feature :
   
 ตัวอย่างโมเดล :
 
-<div>
 ```python
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
@@ -55,7 +54,6 @@ best_knn = grid_search.best_estimator_
 y_predict_train2 = best_knn.predict(X_train_scaled2)
 y_predict_test2 = best_knn.predict(X_test_scaled2)
 
-</div>
 ## การประเมินผลโมเดล (Evaluation)
 * Accuracy
 * Precision
