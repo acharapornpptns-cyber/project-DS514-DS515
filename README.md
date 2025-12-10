@@ -15,6 +15,7 @@
 ## Target and Feature Selection 
 Target :
 * Sales_Channel
+
 Feature : 
 * Package_Type
 * Price_After_Discount
