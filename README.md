@@ -14,7 +14,8 @@ project final DS514-515
 * Encode ข้อมูลที่เป็น Category
 
 ## Target and Feature Selection 
-Target : Sales_Channel
+Target :
+* Sales_Channel
 Feature : 
 * Package_Type
 * Price_After_Discount
