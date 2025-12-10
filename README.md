@@ -53,19 +53,28 @@ print("Best parameters : ", grid_search.best_params_)
 best_knn = grid_search.best_estimator_
 y_predict_train2 = best_knn.predict(X_train_scaled2)
 y_predict_test2 = best_knn.predict(X_test_scaled2)
+```
 
 ## การประเมินผลโมเดล (Evaluation)
-* Accuracy
-* Precision
-* Recall
-* F1-Score
-* Confusion Matrix
-* Classification Report
+Accuracy
+Precision
+Recall
+F1-Score
+Confusion Matrix
+Classification Report
 
-## Conclusion
-* ทั้งสองโมเดลมีความแม่นยำเฉลี่ยใกล้เคียงกัน (~60%) <br>
-* Class 0 (DirectSales) Logistic Regression ให้ Recall สูงถึง 68% ดีกว่า KNN 
-* Class 1 (Organic) ถูกทำนายได้ดีที่สุดในทั้งสองโมเดล โดยมี Recall 83–90% 
-* Class 2 (TeleSales) คือ class ที่โมเดลทำนายได้แย่ที่สุด (ไม่ถึง 40–50%) 
-* โมเดล Logistic Regression ให้ค่าความแม่ยำดีกว่า และค่าแต่ละ class ทำนายถูกได้มากกว่า KNN 
-* โมเดลสามารถทำนาย Organic ได้ดี แต่ยังไม่แม่นยำสำหรับ TeleSales อาจจะเพราะข้อมูลซับซ้อนเกินไป 
+## Model Performance Evaluation
+ตัวอย่างผลลัพธ์ :
+
+| Class | Precision | Recall | F1-Score | Support |
+| :--- | :---: | :---: | :---: | :---: |
+| **0** | 0.40 | 0.52 | 0.45 | 62 |
+| **1** | 0.85 | 0.83 | 0.84 | 84 |
+| **2** | 0.56 | 0.45 | 0.50 | 82 |
+| | | | | |
+| **Accuracy** | | | **0.61** | **228** |
+| **Macro Avg** | 0.60 | 0.60 | 0.60 | 228 |
+| **Weighted Avg**| 0.62 | 0.61 | 0.61 | 228 |
+
+> **Note:** The model performs best on **Class 1** (F1-score: 0.84) but struggles with **Class 0** (F1-score: 0.45).
+
