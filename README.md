@@ -53,6 +53,14 @@
 * เพิ่มคอลัมน์อายุ
 * ตัดข้อมูลที่ไม่ถูกต้องออก (ผู้ที่อายุน้อยกว่า 14 ปี)
 
+ตัวอย่างการลบช่องว่างของข้อมูล :
+  
+```python
+# Code Snippet: Dropping null values
+df2 = df.dropna(subset=['Gender', 'Year_Birthday', 'Subdistrict', 
+                        'District', 'Province', 'Postal_Code', 'Payment_Method'])
+```
+
 ## การวิเคราะห์ข้อมูล (EDA)
 
 <img width="560" height="450" alt="Target" src="https://github.com/user-attachments/assets/42dc8321-8725-4680-985b-093d085deb16" />
