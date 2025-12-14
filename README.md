@@ -10,6 +10,10 @@
 * เพิ่มคอลัมน์อายุ
 * ตัดข้อมูลที่ไม่ถูกต้องออก (ผู้ที่อายุน้อยกว่า 14 ปี)
 
+## การวิเคราะห์ข้อมูล (EDA)
+
+* จากรูปพบว่ามีข้อมูล Imbalance ชัดเจน โดยข้อมูลส่วนใหญ่อยู่ที่ช่องทาง TeleSales และส่วนน้อยสุดอยู่ที่ช่องทาง DirectSales
+
 ## Imbalance Data and Encoding
 * จัดการข้อมูล Imbalance โดยการสุ่มข้อมูล (เลือกจำนวนข้อมูลจากจำนวนกลุ่มที่น้อยที่สุด)
 * Encode ข้อมูลที่เป็น Category
@@ -29,6 +33,15 @@ Feature :
 ## Model และ การปรับ Hyperparameters
 * K-Nearest Neighbors
 * Logistic Regression
+
+ขั้นตอนการทำงาน
+* จัดการข้อมูล Imbalance โดยการสุ่มข้อมูล (เลือกจำนวนข้อมูลจากจำนวนกลุ่มที่น้อยที่สุด)
+* Encode ข้อมูลที่เป็น Category ด้วยวิธีการ Label Encoding
+* เลือก Target และ Feature ที่สนใจ
+* Data Split Train 80% และ Test 20%
+* Scaling ข้อมูล
+* Train Model ด้วย K-Nearest Neighbor และ Logistic Regression
+* Gridsearch CV เพื่อเลือกพารามิเตอร์ที่ดีที่สุด
   
 ตัวอย่างโมเดล :
 
@@ -79,10 +92,9 @@ y_predict_test2 = best_knn.predict(X_test_scaled2)
 | **Weighted Avg**| 0.62 | 0.61 | 0.61 | 228 |
 
 ## Conclusion
-* ทั้งสองโมเดลมีความแม่นยำเฉลี่ยใกล้เคียงกัน (~60%)
+จากโมเดล K-Nearest Neighbor และ Logistic Regression ทั้งสองโมเดลมีความแม่นยำเฉลี่ยใกล้เคียงกัน (~60%) โดยมีรายละเอียกแต่ละ class ดังนี้
 * Class 0 (DirectSales) Logistic Regression ให้ Recall สูงถึง 68% ดีกว่า KNN
 * Class 1 (Organic) ถูกทำนายได้ดีที่สุดในทั้งสองโมเดล โดยมี Recall 83–90%
 * Class 2 (TeleSales) คือ class ที่โมเดลทำนายได้แย่ที่สุด (ไม่ถึง 40–50%)
-* โมเดล Logistic Regression ให้ค่าความแม่ยำดีกว่า และค่าแต่ละ class ทำนายถูกได้มากกว่า KNN
-* โมเดลสามารถทำนาย Organic ได้ดี แต่ยังไม่แม่นยำสำหรับ TeleSales อาจจะเพราะข้อมูลซับซ้อนเกินไป
+จากการประเมินผลที่ได้ของทั้งสองโมเดลแล้วโมเดล Logistic Regression ให้ค่าความแม่ยำดีกว่า และค่าแต่ละ class ทำนายถูกได้มากกว่า KNN โดยโมเดลสามารถทำนาย Organic ได้ดี แต่ยังไม่แม่นยำสำหรับ TeleSales อาจจะเพราะข้อมูลซับซ้อนเกินไป ต้องเก็บข้อมูล feature เพิ่มเติมเพื่อพัฒนาโมเดลต่อไป
 
