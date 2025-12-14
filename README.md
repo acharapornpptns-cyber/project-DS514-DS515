@@ -23,8 +23,8 @@
 
 ## การวิเคราะห์ข้อมูล (EDA)
 
-* จากรูปพบว่ามีข้อมูล Imbalance ชัดเจน โดยข้อมูลส่วนใหญ่อยู่ที่ช่องทาง TeleSales และส่วนน้อยสุดอยู่ที่ช่องทาง DirectSales
 <img width="560" height="450" alt="Target" src="https://github.com/user-attachments/assets/42dc8321-8725-4680-985b-093d085deb16" />
+* จากรูปพบว่ามีข้อมูล Imbalance ชัดเจน โดยข้อมูลส่วนใหญ่อยู่ที่ช่องทาง TeleSales และส่วนน้อยสุดอยู่ที่ช่องทาง DirectSales
 
 ## Imbalance Data and Encoding
 * จัดการข้อมูล Imbalance โดยการสุ่มข้อมูล (เลือกจำนวนข้อมูลจากจำนวนกลุ่มที่น้อยที่สุด)
